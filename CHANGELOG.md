@@ -14,6 +14,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Homebrew tap: `brew install kirankotari/tap/ossguard`
 - PyPI and Docker badges in README
 - Comprehensive installation section in README (PyPI, pipx, binaries, Homebrew, Docker)
+- Issue templates (bug report, feature request) and PR template
+- CODEOWNERS file for review routing
+- GitHub repo metadata (description, topics, homepage)
+
+### Security
+
+- Pin all GitHub Actions to commit SHAs across all 8 workflows (Scorecard PinnedDependencies)
+- Pin Docker base image to digest in Dockerfile
+- Set `permissions: read-all` at workflow top level (Scorecard Token-Permissions)
+- Job-level least-privilege permissions for write operations
 
 ### Fixed
 
