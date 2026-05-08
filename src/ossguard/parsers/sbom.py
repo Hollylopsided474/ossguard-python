@@ -141,8 +141,9 @@ def _ecosystem_from_purl(purl: str) -> str:
 
 def _guess_ecosystem(name: str) -> str:
     """Guess ecosystem from package name patterns."""
-    if "/" in name and not name.startswith("github.com"):
+    host = name.split("/")[0] if "/" in name else ""
+    if host and host not in ("github.com", "golang.org"):
         return "npm"  # scoped npm packages like @scope/name
-    if name.startswith("github.com/") or name.startswith("golang.org/"):
+    if host in ("github.com", "golang.org"):
         return "go"
     return ""

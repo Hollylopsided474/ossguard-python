@@ -28,7 +28,7 @@ jobs:
           python-version: "3.x"
 
       - name: Install build dependencies
-        run: pip install build
+        run: pip install build==1.2.2.post1
 
       - name: Build distribution
         run: python -m build

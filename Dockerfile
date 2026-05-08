@@ -4,7 +4,7 @@ WORKDIR /app
 COPY pyproject.toml README.md LICENSE ./
 COPY src/ src/
 
-RUN pip install --no-cache-dir build && \
+RUN pip install --no-cache-dir build==1.2.2.post1 && \
     python -m build --wheel && \
     pip install --no-cache-dir dist/*.whl
 

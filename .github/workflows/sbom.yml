@@ -11,13 +11,14 @@ on:
   push:
     branches: [ "main", "master" ]
 
-permissions:
-  contents: write
+permissions: read-all
 
 jobs:
   sbom:
     name: Generate SBOM
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
 
     steps:
       - name: Checkout code
