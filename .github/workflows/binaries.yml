@@ -1,0 +1,87 @@
+name: Build Standalone Binaries
+
+on:
+  push:
+    tags: ["v*"]
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    strategy:
+      matrix:
+        include:
+          - os: ubuntu-latest
+            artifact: ossguard-linux-amd64
+            pyinstaller_args: ""
+          - os: macos-latest
+            artifact: ossguard-macos-arm64
+            pyinstaller_args: ""
+          - os: windows-latest
+            artifact: ossguard-windows-amd64.exe
+            pyinstaller_args: ""
+
+    runs-on: ${{ matrix.os }}
+
+    steps:
+      - uses: actions/checkout@v6
+
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: |
+          pip install -e .
+          pip install pyinstaller
+
+      - name: Build binary
+        run: |
+          pyinstaller --onefile --name ossguard --clean \
+            --hidden-import ossguard.analyzers \
+            --hidden-import ossguard.generators \
+            --hidden-import ossguard.parsers \
+            --hidden-import ossguard.apis \
+            --collect-submodules ossguard \
+            src/ossguard/cli.py
+        shell: bash
+
+      - name: Rename artifact
+        run: |
+          if [ "${{ runner.os }}" = "Windows" ]; then
+            mv dist/ossguard.exe "dist/${{ matrix.artifact }}"
+          else
+            mv dist/ossguard "dist/${{ matrix.artifact }}"
+          fi
+        shell: bash
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v7
+        with:
+          name: ${{ matrix.artifact }}
+          path: dist/${{ matrix.artifact }}
+
+  release:
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Download all artifacts
+        uses: actions/download-artifact@v8
+
+      - name: Generate checksums
+        run: |
+          mkdir -p release
+          for dir in ossguard-*; do
+            cp "$dir"/* release/ 2>/dev/null || true
+          done
+          cd release
+          sha256sum * > checksums-sha256.txt
+
+      - name: Upload to GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          files: release/*
+          fail_on_unmatched_files: false

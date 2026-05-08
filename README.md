@@ -3,6 +3,8 @@
 **One CLI to guard any OSS project with OpenSSF security best practices — bootstrap, scan, and monitor.**
 
 [![CI](https://github.com/kirankotari/ossguard/actions/workflows/ci.yml/badge.svg)](https://github.com/kirankotari/ossguard/actions/workflows/ci.yml)
+[![PyPI](https://img.shields.io/pypi/v/ossguard)](https://pypi.org/project/ossguard/)
+[![Docker](https://ghcr-badge.egpl.dev/kirankotari/ossguard/latest_tag?trim=major&label=docker)](https://github.com/kirankotari/ossguard/pkgs/container/ossguard)
 [![License: Apache-2.0](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](LICENSE)
 [![Python 3.9+](https://img.shields.io/badge/python-3.9%2B-blue.svg)](https://www.python.org/downloads/)
 
@@ -22,12 +24,53 @@ But setting them all up manually takes **hours**. And once set up, there's no un
 2. **Analyze** — audit security posture, dependencies, vulnerabilities, and compliance
 3. **Remediate** — auto-fix issues, generate reports, and enforce policies
 
+## Installation
+
+### PyPI (recommended)
+
+```bash
+pip install ossguard
+
+# Or with pipx (isolated install)
+pipx install ossguard
+```
+
+### Standalone Binaries (no Python required)
+
+Download pre-built binaries from [GitHub Releases](https://github.com/kirankotari/ossguard/releases):
+
+```bash
+# macOS (Apple Silicon)
+curl -L https://github.com/kirankotari/ossguard/releases/latest/download/ossguard-macos-arm64 -o ossguard
+chmod +x ossguard && sudo mv ossguard /usr/local/bin/
+
+# Linux (x86_64)
+curl -L https://github.com/kirankotari/ossguard/releases/latest/download/ossguard-linux-amd64 -o ossguard
+chmod +x ossguard && sudo mv ossguard /usr/local/bin/
+```
+
+### Homebrew
+
+```bash
+brew install kirankotari/tap/ossguard
+```
+
+### Docker
+
+```bash
+# Scan current directory
+docker run --rm -v "$(pwd):/project" ghcr.io/kirankotari/ossguard scan
+
+# Bootstrap OpenSSF configs
+docker run --rm -v "$(pwd):/project" ghcr.io/kirankotari/ossguard init
+
+# Any command works
+docker run --rm -v "$(pwd):/project" ghcr.io/kirankotari/ossguard audit
+```
+
 ## Quick Start
 
 ```bash
-# Install
-pip install ossguard
-
 # Bootstrap your project with all OpenSSF best practices
 cd your-project
 ossguard init
