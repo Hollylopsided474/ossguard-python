@@ -1,4 +1,4 @@
-FROM python:3.12-slim@sha256:85ae3b09fa7b2fbfd15dd3c57ca420aa36fa63c4d1ae0ce9f08c3466273a40fb AS builder
+FROM python:3.12-slim@sha256:46cb7cc2877e60fbd5e21a9ae6115c30ace7a077b9f8772da879e4590c18c2e3 AS builder
 
 WORKDIR /app
 COPY pyproject.toml README.md LICENSE ./
@@ -8,7 +8,7 @@ RUN pip install --no-cache-dir build && \
     python -m build --wheel && \
     pip install --no-cache-dir dist/*.whl
 
-FROM python:3.12-slim@sha256:85ae3b09fa7b2fbfd15dd3c57ca420aa36fa63c4d1ae0ce9f08c3466273a40fb
+FROM python:3.12-slim@sha256:46cb7cc2877e60fbd5e21a9ae6115c30ace7a077b9f8772da879e4590c18c2e3
 
 LABEL org.opencontainers.image.source="https://github.com/kirankotari/ossguard"
 LABEL org.opencontainers.image.description="One CLI to guard any OSS project with OpenSSF security best practices"
