@@ -3,7 +3,7 @@
 **The reference Python implementation of [OSSGuard](https://github.com/kirankotari/ossguard).**
 
 [![CI](https://github.com/kirankotari/ossguard-python/actions/workflows/ci.yml/badge.svg)](https://github.com/kirankotari/ossguard-python/actions/workflows/ci.yml)
-[![PyPI](https://img.shields.io/pypi/v/ossguard)](https://pypi.org/project/ossguard/)
+[![PyPI](https://img.shields.io/pypi/v/ossguard?cacheSeconds=300)](https://pypi.org/project/ossguard/)
 [![License: Apache-2.0](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](LICENSE)
 [![Python 3.9+](https://img.shields.io/badge/python-3.9%2B-blue.svg)](https://www.python.org/downloads/)
 
