@@ -80,7 +80,8 @@ jobs:
           sha256sum * > checksums-sha256.txt
 
       - name: Upload to GitHub Release
-        uses: softprops/action-gh-release@da05d552573ad5aba039eaac05058a918a7bf631 # v2.2.2
+        uses: softprops/action-gh-release@v3
         with:
           files: release/*
           fail_on_unmatched_files: false
+          make_latest: false
