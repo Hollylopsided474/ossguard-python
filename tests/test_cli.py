@@ -2,6 +2,7 @@
 
 from typer.testing import CliRunner
 
+from ossguard import __version__
 from ossguard.cli import app
 
 runner = CliRunner()
@@ -92,4 +93,4 @@ class TestVersionCommand:
     def test_version(self):
         result = runner.invoke(app, ["version"])
         assert result.exit_code == 0
-        assert "0.1.0" in result.output
+        assert __version__ in result.output
