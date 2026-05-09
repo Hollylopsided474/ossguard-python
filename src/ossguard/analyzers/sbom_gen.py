@@ -168,7 +168,7 @@ def _generate_cyclonedx(project_name: str, deps: list[Dependency]) -> str:
         "version": 1,
         "metadata": {
             "timestamp": now,
-            "tools": [{"vendor": "ossguard", "name": "ossguard", "version": "0.1.3a3"}],
+            "tools": [{"vendor": "ossguard", "name": "ossguard", "version": "0.1.4a1"}],
             "component": {
                 "type": "application",
                 "name": project_name,
