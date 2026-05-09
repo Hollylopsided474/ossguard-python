@@ -11,7 +11,7 @@ RUN apk add --no-cache git && \
 
 FROM alpine:3.20
 
-LABEL org.opencontainers.image.source="https://github.com/kirankotari/ossguard"
+LABEL org.opencontainers.image.source="https://github.com/kirankotari/ossguard-python"
 LABEL org.opencontainers.image.description="One CLI to guard any OSS project with OpenSSF security best practices"
 LABEL org.opencontainers.image.licenses="Apache-2.0"
 

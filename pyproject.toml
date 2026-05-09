@@ -42,8 +42,8 @@ ossguard = "ossguard.cli:app"
 
 [project.urls]
 Homepage = "https://github.com/kirankotari/ossguard"
-Repository = "https://github.com/kirankotari/ossguard"
-Issues = "https://github.com/kirankotari/ossguard/issues"
+Repository = "https://github.com/kirankotari/ossguard-python"
+Issues = "https://github.com/kirankotari/ossguard-python/issues"
 
 [tool.setuptools.packages.find]
 where = ["src"]
