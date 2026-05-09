@@ -10,7 +10,7 @@ your efforts to responsibly disclose your findings.
 ### How to Report
 
 - **Email**: [security@ossguard.dev](mailto:security@ossguard.dev)
-- **GitHub Security Advisories**: Use [GitHub's private vulnerability reporting](https://github.com/OWNER/ossguard/security/advisories/new) to report a vulnerability directly.
+- **GitHub Security Advisories**: Use [GitHub's private vulnerability reporting](https://github.com/kirankotari/ossguard-python/security/advisories/new) to report a vulnerability directly.
 
 ### What to Include
 
@@ -47,7 +47,7 @@ for coordinated disclosure. We request that you:
 ## Security Updates
 
 Security updates will be released as patch versions and announced via:
-- [GitHub Security Advisories](https://github.com/OWNER/ossguard/security/advisories)
+- [GitHub Security Advisories](https://github.com/kirankotari/ossguard-python/security/advisories)
 - Release notes
 
 ## Security Best Practices

@@ -7,16 +7,19 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.1.1] - 2026-05-08
+
 ### Added
 
-- Docker image published to `ghcr.io/kirankotari/ossguard` on every push
-- Standalone binary builds (macOS, Linux, Windows) via PyInstaller on release
-- Homebrew tap: `brew install kirankotari/tap/ossguard`
-- PyPI and Docker badges in README
-- Comprehensive installation section in README (PyPI, pipx, binaries, Homebrew, Docker)
 - Issue templates (bug report, feature request) and PR template
 - CODEOWNERS file for review routing
 - GitHub repo metadata (description, topics, homepage)
+
+### Changed
+
+- Repository renamed from `ossguard` to `ossguard-python` (multi-repo structure)
+- README rewritten to reference main [ossguard](https://github.com/kirankotari/ossguard) docs repo
+- Updated `pyproject.toml` URLs to point to `ossguard-python`
 
 ### Security
 
@@ -27,6 +30,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Fixed
 
+- Fix `__version__` showing `0.1.0` instead of `0.1.1` in CLI banner
 - Bump all GitHub Actions to Node.js 24 compatible versions (checkout v6, setup-python v6, upload-artifact v7, download-artifact v8)
 - Fix `ossf/scorecard-action@v2` (non-existent tag) to `@v2.4.0`
 - Apply `ruff format` to all source files

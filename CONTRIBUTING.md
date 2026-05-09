@@ -6,8 +6,8 @@ Thank you for your interest in contributing to OSSGuard! This project follows th
 
 1. **Fork** the repository and clone your fork:
    ```bash
-   git clone https://github.com/<your-username>/ossguard.git
-   cd ossguard
+   git clone https://github.com/<your-username>/ossguard-python.git
+   cd ossguard-python
    ```
 
 2. **Install** in development mode:
@@ -71,7 +71,7 @@ We follow [Conventional Commits](https://www.conventionalcommits.org/):
 
 ## Reporting Issues
 
-- Use [GitHub Issues](https://github.com/kirankotari/ossguard/issues)
+- Use [GitHub Issues](https://github.com/kirankotari/ossguard-python/issues)
 - Include steps to reproduce, expected behavior, and actual behavior
 - For security vulnerabilities, see [SECURITY.md](SECURITY.md)
 
